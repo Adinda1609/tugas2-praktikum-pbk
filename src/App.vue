@@ -69,3 +69,35 @@ onMounted(() => {
 });
 </script>
 
+<template>
+  <main class="app">
+    <!-- Menampilkan Nama User -->
+    <section class="greeting">
+      <h2 class="title">Hallo Sri Adinda!🚀</h2>
+    </section>
+
+    <!-- Membuat Form Tambah Kegiatan -->
+    <section class="create-todo">
+      <form @submit.prevent="addTodo">
+        <h4>Kegiatan apa yang ingin dilakukan?</h4>
+        <input type="text" placeholder="cth. editing" v-model="input_content" />
+
+        <h4>Pilih Kategori</h4>
+        <div class="options">
+          <label>
+            <input type="radio" name="category" value="bisnis" v-model="input_category" />
+            <span class="bubble bisnis"></span>
+            <div>Bisnis</div>
+          </label>
+          <label>
+            <input type="radio" name="category" value="personal" v-model="input_category" />
+            <span class="bubble personal"></span>
+            <div>Personal</div>
+          </label>
+        </div>
+
+        <input type="submit" value="Tambahkan Kegiatan" />
+      </form>
+    </section>
+  </main>  
+</template>
