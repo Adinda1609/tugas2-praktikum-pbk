@@ -18,6 +18,15 @@ const showNotification = (message) => {
   }, 2000);
 };
 
+// STEP 6: Menampilkan Kegiatan yang Belum Selesai
+const todos_asc = computed(() => {
+  let filtered = todos.value;
+  if (showUndoneOnly.value) {
+    filtered = filtered.filter ((t) => !t.done);
+  }
+  return filtered.sort((a,b) => a.createdAt - b.createdAt);
+});
+
 // STEP 5: Menyimpan Nama dan Kegiatan ke Local Storage
 watch(name, (newVal) => {
   localStorage.setItem('name', newVal);
