@@ -17,4 +17,25 @@ const showNotification = (message) => {
     notification.value = '';
   }, 2000);
 };
+
+// STEP 2: Menambahkan Kegiatan
+const addTodo = () => {
+  if (input_content.value.trim() === '' || input_category.value === null) {
+     showNotification('⚠️ Harap isi semua data!');
+     return;
+  }
+
+  todos.value.push({
+    content: input_content.value,
+    category: input_category.value,
+    done: false,
+    editable: false,
+    createdAt: new Date().getTime()
+  });
+
+  showNotification('✅ Kegiatan berhasil ditambahkan!');
+  input_content.value = '';
+  input_category.value = null;
+};
 </script>
+
