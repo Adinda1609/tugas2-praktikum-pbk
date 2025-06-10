@@ -76,7 +76,7 @@ onMounted(() => {
       <h2 class="title">Hallo Sri Adinda!🚀</h2>
     </section>
 
-    <!-- Membuat Form Tambah Kegiatan -->
+    <!-- Membuat Form Tambah Kegiatan(FORM BINDINGS) -->
     <section class="create-todo">
       <form @submit.prevent="addTodo">
         <h4>Kegiatan apa yang ingin dilakukan?</h4>
@@ -98,6 +98,37 @@ onMounted(() => {
 
         <input type="submit" value="Tambahkan Kegiatan" />
       </form>
+    </section>
+
+    <!--Menampilkan Kegiatan -->
+    <section class="todo-list">
+      <h3>List kegiatan kamu ada disini🌷🌷</h3>
+
+      <div class="list-container">
+        <!-- Kegiatan yang sudah dilakukan -->
+        <div class="todo-column">
+          <h4>Kegiatan yang sudah dilakukan</h4>
+          <div class="list">
+            <div v-for="todo in todos_asc.filter(t => t.done)" :key="todo.createdAt" :class="`todo-item ${todo.done && 'done'}`">
+              <label>
+                <!-- MEMAKAI FORM BINDINGS -->
+                <input type="checkbox" v-model="todo.done" />
+                <span :class="`bubble ${ todo.category == 'bisnis' ? 'bisnis' : 'personal'}`"></span>
+              </label>
+                <!-- MEMAKAI FORM BINDINGS -->
+              <div class="todo-content">
+                <input type="text" v-model="todo.content" />
+              </div>
+              <div class="actions">
+                <!-- MEMAKAI EVENT LISTENER -->
+                <button class="delete" @click="removeTodo(todo)"> 
+                  <font-awesome-icon :icon="['fas', 'trash']" />                
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
     </section>
   </main>  
 </template>
