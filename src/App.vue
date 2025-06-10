@@ -18,6 +18,15 @@ const showNotification = (message) => {
   }, 2000);
 };
 
+// STEP 5: Menyimpan Nama dan Kegiatan ke Local Storage
+watch(name, (newVal) => {
+  localStorage.setItem('name', newVal);
+});
+
+watch(todos, (newVal) => {
+  localStorage.setItem('todos', JSON.stringify(newVal));
+}, { deep: true });
+
 // STEP 2: Menambahkan Kegiatan
 const addTodo = () => {
   if (input_content.value.trim() === '' || input_category.value === null) {
