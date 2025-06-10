@@ -1,5 +1,33 @@
-# Vue 3 + Vite
+# ✅ Aplikasi To-Do List dengan Vue.js!
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aplikasi to-do list sederhana yang dibuat menggunakan **Vue 3 + Vite**.  
+Semua data disimpan di `localStorage`, sehingga tetap tersimpan meskipun halaman direfresh atau browser ditutup.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+
+---
+
+## 📌 Tentang Project
+
+Repository ini dibuat untuk memenuhi tugas pada mata kuliah **Praktikum Pemrograman Berbasis Komponen (PBK)**.  
+Aplikasi ini merupakan implementasi to-do list dengan fitur penambahan, penghapusan, dan penyimpanan data secara lokal. Dimana terdapat Komponen : 
+1. Declarative Rendering
+2. Attribute Bindings
+3. Event Listeners
+4. Form Bindings
+5. Conditional Rendering 
+
+---
+
+## 👩‍🎓 Informasi Mahasiswa
+
+- **Nama:** Sri Adinda  
+- **NPM:** 233510515  
+- **Kelas:** 4F  
+- **Program Studi:** Teknik Informatika
+
+---
+
+Dengan catatan pastikan terlebih dahulu sudah menginstal fontawesome agar <font-awesome-icon> bekerja.
+```bash
+# 3. Install kode dibawah ini
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome
