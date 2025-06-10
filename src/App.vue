@@ -43,5 +43,11 @@ const removeTodo = (todo) => {
   todos.value = todos.value.filter((t) => t !== todo);
   showNotification('Kegiatan berhasil dihapus!');
 };
+
+// STEP 4: Memuat Data Nama dan Kegiatan dari Local Storage
+onMounted(() => {
+  name.value = localStorage.getItem('name') || '';
+  todos.value = JSON.parse(localStorage.getItem('todos')) || [];
+});
 </script>
 
