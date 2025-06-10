@@ -37,5 +37,11 @@ const addTodo = () => {
   input_content.value = '';
   input_category.value = null;
 };
+
+// STEP 3: Menghapus Kegiatan
+const removeTodo = (todo) => {
+  todos.value = todos.value.filter((t) => t !== todo);
+  showNotification('Kegiatan berhasil dihapus!');
+};
 </script>
 
